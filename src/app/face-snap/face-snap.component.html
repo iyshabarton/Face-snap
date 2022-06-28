@@ -1,4 +1,8 @@
-<p>Does this work ?</p>
-<div>
+<div class="face-snap-card">
     <h1>{{faceSnap.title}}</h1>
+    <p>{{faceSnap.description}}</p>
+    <p>{{faceSnap.createdDate | date: 'HH:mm'}}</p>
+    <h1>{{faceSnap.snaps}}</h1>
+    <img [src]="faceSnap.imageUrl" [alt]="title">
+    <p *ngIf="faceSnap.location">Picture taken in {{faceSnap.location}}</p>
 </div>
