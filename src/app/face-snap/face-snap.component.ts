@@ -8,16 +8,25 @@ import { FaceSnap } from './models/face-snap.model';
 })
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap
-  title!: string;
-  description!: string;
-  createdDate!: Date;
-  snaps!: number;
-  imageUrl!: string;
-  buttonText!: string;
+  // title!: string;
+  // description!: string;
+  // createdDate!: Date;
+  // snaps!: number;
+  // imageUrl!: string;
+buttonText!: string;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSnap() {
+    if(this.buttonText === 'Like') {
+      this.faceSnap.snaps++;
+      this.buttonText = 'Unlike'
+    } else {
+      this.faceSnap.snaps--;
+      this.buttonText = 'Like'
+    }
   }
 
 }
